@@ -21,8 +21,8 @@ class FIFOCache(BaseCaching):
                 self.keys.append(key)
             if len(self.keys) > BaseCaching.MAX_ITEMS:
                 discarded_key = self.keys.pop(0)
-                del self.cache_data[discard_key]
-                print('DISCARD: {:s}'.format(discard_key))
+                del self.cache_data[discarded_key]
+                print('DISCARD: {:s}'.format(discarded_key))
 
     def get(self, key):
         """ Returns the value linked to the key in self.cache_data """
