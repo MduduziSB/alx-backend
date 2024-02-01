@@ -10,7 +10,10 @@ class FIFOCache(BaseCaching):
         super().__init__()
 
     def put(self, key, item):
-        """ Assigns item value to the dictionary for the given key using FIFO algorithm """
+        """
+        Assigns item value to the dictionary
+        for the given key using FIFO algorithm
+        """
         if key is not None and item is not None:
             if len(self.cache_data) >= BaseCaching.MAX_ITEMS:
                 # If the cache is full, discard the first item (FIFO)
