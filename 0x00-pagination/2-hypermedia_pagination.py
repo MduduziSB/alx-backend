@@ -2,7 +2,7 @@
 """ get_hyper Module """
 import csv
 import math
-from typing import List, Tuple
+from typing import Dict, List, Tuple, Union
 
 
 class Server:
@@ -62,13 +62,14 @@ class Server:
             return page_data[start_index:end_index]
         return []
 
-    def get_hyper(self, page: int = 1, page_size: int = 10) -> Dict:
+    def get_hyper(self, page: int,
+                  page_size: int) -> Dict[str, Union[int, List[List], None]]:
         """
         Get hypermedia information for the specified page.
 
         Args:
-        - page (int, optional): The page number (1-indexed). Default 1.
-        - page_size (int, optional): The number of items per page. Default 10.
+        - page (int): The page number (1-indexed).
+        - page_size (int): The number of items per page.
 
         Returns:
         - dict: Dictionary containing hypermedia information.
